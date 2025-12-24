@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spaces → Dots generator</title>
+  <link rel="icon" type="image/ZSF" href="https://i.imgur.com/wcU4uaG.png">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #111;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 10px;
+    }
+    h1 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    textarea {
+      width: 100%;
+      max-width: 800px;
+      min-height: 140px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #444;
+      background: #000;
+      color: #eee;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 8px 16px;
+      border-radius: 4px;
+      border: none;
+      background: #ff9100;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ffc74d;
+    }
+    .container {
+      width: 100%;
+      max-width: 800px;
+    }
+    .label {
+      margin: 8px 0 4px;
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Spaces → Dots generator</h1>
+
+  <div class="container">
+    <div class="label">Input (paste text here):</div>
+    <textarea id="input"></textarea>
+
+    <button id="convertBtn">Convert</button>
+
+    <div class="label">Output (spaces replaced with dots):</div>
+    <textarea id="output" readonly></textarea>
+  </div>
+
+  <script>
+    const input = document.getElementById('input');
+    const output = document.getElementById('output');
+    const button = document.getElementById('convertBtn');
+
+    button.addEventListener('click', () => {
+      const text = input.value;
+      // replace ALL spaces with dots
+      const converted = text.replace(/ /g, '.');
+      output.value = converted;
+    });
+
+    // optional: Ctrl+Enter to convert
+    input.addEventListener('keydown', (e) => {
+      if (e.ctrlKey && e.key === 'Enter') {
+        button.click();
+      }
+    });
+  </script>
+</body>
+</html>
