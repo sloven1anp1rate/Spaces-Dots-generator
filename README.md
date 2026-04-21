@@ -6,7 +6,7 @@ This simple generator instantly converts any pasted text by removing all spaces 
 It uses JS and HTML to remove spaces and add DOTS.
 #
 WEBISTE:
-[https://sites.google.com/view/kermitshop/std-demo](https://sites.google.com/view/mycreations-slopirate/s-d-generator)
+https://sites.google.com/view/gitme/s-d-generator
 
 #
 ### There is NO way to missuse it!
